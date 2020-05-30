@@ -10,7 +10,7 @@
 								New York, NY
 							</span>
 
-							<img class="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG">
+							<img class="m-b-1 m-rl-8" src="{{ asset('assets/frontend/images/icons/icon-night.png') }}" alt="IMG">
 
 							<span>
 								HI 58° LO 56°
@@ -62,7 +62,7 @@
         <div class="wrap-header-mobile">
             <!-- Logo moblie -->
             <div class="logo-mobile">
-                <a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+                <a href="index.html"><img src="{{ asset('assets/frontend/images/icons/logo-01.png') }}" alt="IMG-LOGO"></a>
             </div>
 
             <!-- Button show menu -->
@@ -82,7 +82,7 @@
 								New York, NY
 							</span>
 
-							<img class="m-b-1 m-rl-8" src="images/icons/icon-night.png" alt="IMG">
+							<img class="m-b-1 m-rl-8" src="{{ asset('assets/frontend/images/icons/icon-night.png') }}" alt="IMG">
 
 							<span>
 								HI 58° LO 56°
@@ -194,12 +194,12 @@
         <div class="wrap-logo container">
             <!-- Logo desktop -->
             <div class="logo">
-                <a href="index.html"><img src="images/icons/logo-01.png" alt="LOGO"></a>
+                <a href="index.html"><img src="{{ asset('assets/frontend/images/icons/logo-01.png') }}" alt="LOGO"></a>
             </div>
 
             <!-- Banner -->
             <div class="banner-header">
-                <a href="#"><img src="images/banner-01.jpg" alt="IMG"></a>
+                <a href="#"><img src="{{ asset('assets/frontend/images/banner-01.jpg') }}" alt="IMG"></a>
             </div>
         </div>
 
@@ -209,7 +209,7 @@
                 <!-- Menu desktop -->
                 <nav class="menu-desktop">
                     <a class="logo-stick" href="index.html">
-                        <img src="images/icons/logo-01.png" alt="LOGO">
+                        <img src="{{ asset('assets/frontend/images/icons/logo-01.png') }}" alt="LOGO">
                     </a>
 
                     <ul class="main-menu">

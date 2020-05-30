@@ -3,11 +3,10 @@
     <ul>
         <li class="active"><a href="{{ route('admin.dashboard') }}"><i class="icon icon-home"></i> <span>Dashboard</span></a></li>
         <li class="submenu">
-            <a href="#"><i class="icon icon-th-list"></i> <span>Form elements</span> <span class="label">3</span></a>
+            <a href="#"><i class="icon icon-th-list"></i> <span>News Category</span></a>
             <ul>
-                <li><a href="form-common.html">Common elements</a></li>
-                <li><a href="form-validation.html">Validation</a></li>
-                <li><a href="form-wizard.html">Wizard</a></li>
+                <li><a href=""> Category</a></li>
+                <li><a href=""> Sub Category</a></li>
             </ul>
         </li>
     </ul>

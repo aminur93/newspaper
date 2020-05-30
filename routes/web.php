@@ -18,4 +18,5 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/dashboard','DashBoardContoller@index')->name('admin.dashboard');
+    
 });

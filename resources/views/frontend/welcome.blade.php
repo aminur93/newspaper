@@ -1,7 +1,7 @@
 @extends('layouts.frontend.master')
 
 @section('page')
-
+Home
 @stop
 
 @push('css')
@@ -67,7 +67,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-05.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-05.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -98,7 +98,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-06.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-06.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -109,25 +109,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-07.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-07.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -138,25 +138,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Game
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-08.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-08.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -167,18 +167,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Celebrity
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-09.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-09.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -203,18 +203,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-08.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-08.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -234,25 +234,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Celebrity
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-06.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-06.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -263,25 +263,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-07.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-07.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -292,18 +292,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Game
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +317,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-08.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-08.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -328,18 +328,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -348,7 +348,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-07.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-07.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -359,25 +359,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Celebrity
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-06.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-06.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -388,25 +388,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-05.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-05.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -417,18 +417,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Game
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -442,7 +442,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-06.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-06.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -453,18 +453,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -473,7 +473,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-09.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-09.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -484,25 +484,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Celebrity
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-07.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-07.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -513,25 +513,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-08.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-08.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -542,18 +542,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Game
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -567,7 +567,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-07.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-07.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -578,18 +578,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -598,7 +598,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-08.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-08.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -609,25 +609,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Celebrity
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-06.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-06.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -638,25 +638,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Music
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-09.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-09.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -667,18 +667,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Game
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -741,7 +741,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-10.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-10.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -752,18 +752,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Finance
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Finance
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -772,7 +772,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-11.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-11.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -783,25 +783,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Small Business
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Small Business
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-12.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-12.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -812,25 +812,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Economy
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Economy
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-13.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-13.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -841,18 +841,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Money & Markets
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -866,7 +866,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-13.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-13.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -877,18 +877,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Finance
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Finance
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -897,7 +897,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-12.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-12.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -908,25 +908,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Small Business
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Small Business
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-11.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-11.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -937,25 +937,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Economy
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Economy
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-10.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-10.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -966,18 +966,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Money & Markets
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -991,7 +991,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-11.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-11.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -1002,18 +1002,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Finance
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Finance
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1022,7 +1022,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-12.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-12.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1033,25 +1033,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Small Business
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Small Business
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-13.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-13.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1062,25 +1062,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Economy
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Economy
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-10.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-10.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1091,18 +1091,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Money & Markets
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1116,7 +1116,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-12.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-12.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -1127,18 +1127,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Finance
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Finance
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1147,7 +1147,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-13.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-13.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1158,25 +1158,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Small Business
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Small Business
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-10.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-10.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1187,25 +1187,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Economy
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Economy
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-11.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-11.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1216,18 +1216,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Money & Markets
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1294,7 +1294,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-14.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-14.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -1305,18 +1305,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Hotels
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Hotels
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1325,7 +1325,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-15.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-15.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1336,25 +1336,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Beachs
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Beachs
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-16.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-16.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1365,25 +1365,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Flight
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Flight
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-17.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-17.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1394,18 +1394,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Culture
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Culture
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1419,7 +1419,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-15.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-15.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -1430,18 +1430,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Hotels
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Hotels
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1450,7 +1450,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-16.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-16.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1461,25 +1461,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Beachs
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Beachs
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-17.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-17.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1490,25 +1490,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Flight
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Flight
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-18.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-18.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1519,18 +1519,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Culture
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Culture
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1544,7 +1544,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-16.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-16.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -1555,18 +1555,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Hotels
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Hotels
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1575,7 +1575,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-17.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-17.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1586,25 +1586,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Beachs
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Beachs
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-18.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-18.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1615,25 +1615,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Flight
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Flight
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-14.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-14.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1644,18 +1644,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Culture
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Culture
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1669,7 +1669,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-17.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-17.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -1680,18 +1680,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Hotels
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Hotels
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1700,7 +1700,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-18.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-18.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1711,25 +1711,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Beachs
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Beachs
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-14.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-14.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1740,25 +1740,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Flight
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Flight
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-15.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-15.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1769,18 +1769,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Culture
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Culture
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1794,7 +1794,7 @@
                             <!-- Item post -->
                             <div class="m-b-30">
                                 <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-18.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-18.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="p-t-20">
@@ -1805,18 +1805,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Hotels
-														</a>
+                                        <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                                            Hotels
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 18
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -1825,7 +1825,7 @@
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-17.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-17.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1836,25 +1836,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Beachs
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Beachs
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 17
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-16.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-16.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1865,25 +1865,25 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Flight
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Flight
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 16
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
 
                             <!-- Item post -->
                             <div class="flex-wr-sb-s m-b-30">
                                 <a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-                                    <img src="images/post-15.jpg" alt="IMG">
+                                    <img src="{{ asset('assets/frontend/images/post-15.jpg') }}" alt="IMG">
                                 </a>
 
                                 <div class="size-w-2">
@@ -1894,18 +1894,18 @@
                                     </h5>
 
                                     <span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Culture
-														</a>
+                                        <a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+                                            Culture
+                                        </a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
+                                        <span class="f1-s-3 m-rl-3">
+                                            -
+                                        </span>
 
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
+                                        <span class="f1-s-3">
+                                            Feb 12
+                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </div>
