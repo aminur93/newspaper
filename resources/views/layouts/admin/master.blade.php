@@ -1,67 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- container-fluid -->
+<html>
 <head>
-    <title>{{ config('app.name') }} Admin</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/bootstrap-responsive.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/fullcalendar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/unicorn.main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/unicorn.grey.css') }}" class="skin-color" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ config('app.name') }} | Dashboard</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
+
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/jqvmap/jqvmap.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/dist/css/adminlte.min.css') }}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/daterangepicker/daterangepicker.css') }}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/plugins/summernote/summernote-bs4.css') }}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet">
     @stack('css')
 </head>
-<body>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
 
+    @include('layouts.admin.header')
 
-@include('layouts.admin.header')
+    <!-- Main Sidebar Container -->
+    @include('layouts.admin.sidebar')
 
-@include('layouts.admin.sidebar')
-
-<div id="style-switcher">
-    <i class="icon-arrow-left icon-white"></i>
-    <span>Style:</span>
-    <a href="#grey" style="background-color: #555555;border-color: #aaaaaa;"></a>
-    <a href="#blue" style="background-color: #2D2F57;"></a>
-    <a href="#red" style="background-color: #673232;"></a>
-</div>
-
-<div id="content">
-    <div id="content-header">
-        <h1>@yield('page')</h1>
-        <div class="btn-group">
-            <a class="btn btn-large tip-bottom" title="Manage Files"><i class="icon-file"></i></a>
-            <a class="btn btn-large tip-bottom" title="Manage Users"><i class="icon-user"></i></a>
-            <a class="btn btn-large tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a>
-            <a class="btn btn-large tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 text-dark">@yield('page')</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">@yield('page')</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
         </div>
-    </div>
-    <div id="breadcrumb">
-        <a href="{{ route('admin.dashboard') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-        <a href="#" class="current">@yield('page')</a>
-    </div>
+        <!-- /.content-header -->
 
-    <div class="container-fluid">
-
-        @yield('content')
-
-        @include('layouts.admin.footer')
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                @yield('content')
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
+    @include('layouts.admin.footer')
+
 </div>
+<!-- ./wrapper -->
 
+<!-- jQuery -->
+<script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{ asset('assets/admin/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- ChartJS -->
+<script src="{{ asset('assets/admin/plugins/chart.js/Chart.min.js') }}"></script>
+<!-- Sparkline -->
+{{--<script src="{{ asset('assets/admin/plugins/sparklines/sparkline.js') }}"></script>--}}
+<!-- JQVMap -->
+{{--<script src="{{ asset('assets/admin/plugins/jqvmap/jquery.vmap.min.js') }}"></script>--}}
+{{--<script src="{{ asset('assets/admin/plugins/jqvmap/maps/jquery.vmap.world.js') }}"></script>--}}
+<!-- jQuery Knob Chart -->
+<script src="{{ asset('assets/admin/plugins/jquery-knob/jquery.knob.min.js') }}"></script>
+<!-- daterangepicker -->
+<script src="{{ asset('assets/admin/plugins/moment/moment.min.js') }}"></script>
 
-<script src="{{ asset('assets/admin/js/excanvas.min.js') }}"></script>
-<script src="{{ asset('assets/admin/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/admin/js/jquery.ui.custom.js') }}"></script>
-<script src="{{ asset('assets/admin/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/admin/js/jquery.flot.min.js') }}"></script>
-<script src="{{ asset('assets/admin/js/jquery.flot.resize.min.js') }}"></script>
-<script src="{{ asset('assets/admin/js/jquery.peity.min.js') }}"></script>
-<script src="{{ asset('assets/admin/js/fullcalendar.min.js') }}"></script>
-<script src="{{ asset('assets/admin/js/unicorn.js') }}"></script>
-<script src="{{ asset('assets/admin/js/unicorn.dashboard.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/daterangepicker/daterangepicker.js') }}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{{ asset('assets/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<!-- Summernote -->
+<script src="{{ asset('assets/admin/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<!-- overlayScrollbars -->
+{{--<script src="{{ asset('assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>--}}
+<!-- FastClick -->
+{{--<script src="{{ asset('assets/admin/plugins/fastclick/fastclick.js') }}"></script>--}}
+<!-- AdminLTE App -->
+<script src="{{ asset('assets/admin/dist/js/adminlte.js') }}"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+{{--<script src="{{ asset('assets/admin/dist/js/pages/dashboard.js') }}"></script>--}}
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('assets/admin/dist/js/demo.js') }}"></script>
+<!-- DataTables -->
+<script src="{{ asset('assets/admin/plugins/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('assets/admin/plugins/datatables/dataTables.bootstrap4.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+<script>
+    $(function () {
+        $("#example1").DataTable();
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+        });
+    });
+</script>
 
 @stack('js')
 </body>

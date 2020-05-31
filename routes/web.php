@@ -19,4 +19,13 @@ Route::group(['middleware' => ['auth']], function () {
     
     Route::get('/dashboard','DashBoardContoller@index')->name('admin.dashboard');
     
+    //news types routes
+    Route::get('/types','Admin\TypesController@index')->name('types');
+    Route::get('/create','Admin\TypesController@create')->name('create');
+    Route::post('/types/store','Admin\TypesController@store')->name('types.store');
+    Route::get('/types/getData','Admin\TypesController@getData')->name('types.getData');
+    Route::get('/types/edit/{id}','Admin\TypesController@edit')->name('types.edit');
+    Route::post('/types/update/{id}','Admin\TypesController@update')->name('types.update');
+    Route::get('/delete-types/{id}','Admin\TypesController@destroy');
+    
 });

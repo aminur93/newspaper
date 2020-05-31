@@ -8,40 +8,75 @@ DashBoard
 @endpush
 
 @section('content')
-    <div class="row-fluid">
-        <div class="span12 center" style="text-align: center;">
-            <ul class="stat-boxes">
-                <li>
-                    <div class="left peity_bar_good"><span>2,4,9,7,12,10,12</span>+20%</div>
-                    <div class="right">
-                        <strong>36094</strong>
-                        Visits
-                    </div>
-                </li>
-                <li>
-                    <div class="left peity_bar_neutral"><span>20,15,18,14,10,9,9,9</span>0%</div>
-                    <div class="right">
-                        <strong>1433</strong>
-                        Users
-                    </div>
-                </li>
-                <li>
-                    <div class="left peity_bar_bad"><span>3,5,9,7,12,20,10</span>-50%</div>
-                    <div class="right">
-                        <strong>8650</strong>
-                        Orders
-                    </div>
-                </li>
-                <li>
-                    <div class="left peity_line_good"><span>12,6,9,23,14,10,17</span>+70%</div>
-                    <div class="right">
-                        <strong>8650</strong>
-                        Orders
-                    </div>
-                </li>
-            </ul>
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>150</h3>
+
+                    <p>New Orders</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
         </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+                    <p>Bounce Rate</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>44</h3>
+
+                    <p>User Registrations</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>65</h3>
+
+                    <p>Unique Visitors</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
     </div>
+    <!-- /.row -->
+    <!-- Main row -->
+    <div class="row">
+
+    </div>
+    <!-- /.row (main row) -->
 @endsection
 
 @push('js')
