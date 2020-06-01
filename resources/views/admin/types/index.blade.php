@@ -135,6 +135,7 @@ News Types
                         url: deleteFunction+'/'+id,
                         data: {id:id},
                         success: function (data) {
+
                             $('#data-table').DataTable().ajax.reload();
 
                             if(data.flash_message_success) {
