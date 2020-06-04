@@ -89,4 +89,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/sub_category/edit/{id}','Admin\SubCategoryController@edit')->name('sub_category.edit');
     Route::post('/sub_category/update/{id}','Admin\SubCategoryController@update')->name('sub_category.update');
     Route::get('/delete-sub_category/{id}','Admin\SubCategoryController@destroy');
+    
+    //News tag Routes
+    Route::get('/tag','Admin\TagController@index')->name('tag');
+    Route::get('/tag/create','Admin\TagController@create')->name('tag.create');
+    Route::post('/tag/store','Admin\TagController@store')->name('tag.store');
+    Route::get('/tag/getData','Admin\TagController@getData')->name('tag.getData');
+    Route::get('/tag/edit/{id}','Admin\TagController@edit')->name('tag.edit');
+    Route::post('/tag/update/{id}','Admin\TagController@update')->name('tag.update');
+    Route::get('/delete-tag/{id}','Admin\TagController@destroy');
 });
