@@ -30,7 +30,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item has-treeview">
+                <li class="nav-item has-treeview {{ Request::routeIs('types') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ Request::routeIs('types','create') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tint"></i>
                         <p>
@@ -40,7 +40,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('types') }}" class="nav-link">
+                            <a href="{{ route('types') }}" class="nav-link {{ Request::routeIs('types') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Types</p>
                             </a>
@@ -48,7 +48,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item has-treeview">
+                <li class="nav-item has-treeview {{ Request::routeIs('country','country.create','division_city','division_city.create','zilla_state','zilla_state.create','upzilla_substate','upzilla_substate.create') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ Request::routeIs('country','country.create','division_city','division_city.create','zilla_state','zilla_state.create','upzilla_substate','upzilla_substate.create') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-flag"></i>
                         <p>
@@ -58,22 +58,22 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('country') }}" class="nav-link">
+                            <a href="{{ route('country') }}" class="nav-link {{ Request::routeIs('country') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Country</p>
                             </a>
 
-                            <a href="{{ route('division_city') }}" class="nav-link">
+                            <a href="{{ route('division_city') }}" class="nav-link {{ Request::routeIs('division_city') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Division/City</p>
                             </a>
 
-                            <a href="{{ route('zilla_state') }}" class="nav-link">
+                            <a href="{{ route('zilla_state') }}" class="nav-link {{ Request::routeIs('zilla_state') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Zilla/State</p>
                             </a>
 
-                            <a href="{{ route('upzilla_substate') }}" class="nav-link">
+                            <a href="{{ route('upzilla_substate') }}" class="nav-link {{ Request::routeIs('upzilla_substate') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>UpZilla/Sub-State</p>
                             </a>
@@ -81,8 +81,8 @@
                     </ul>
                 </li>
 
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link {{ Request::routeIs('types','create') ? 'active' : '' }}">
+                <li class="nav-item has-treeview {{ Request::routeIs('category','sub_category') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('category','category.create','sub_category','sub_category.create') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                             News Category
@@ -91,12 +91,12 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('types') }}" class="nav-link">
+                            <a href="{{ route('category') }}" class="nav-link {{ Request::routeIs('category') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Category</p>
                             </a>
 
-                            <a href="{{ route('types') }}" class="nav-link">
+                            <a href="{{ route('sub_category') }}" class="nav-link {{ Request::routeIs('sub_category') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Sub-Category</p>
                             </a>

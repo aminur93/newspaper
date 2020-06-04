@@ -73,7 +73,20 @@ Route::group(['middleware' => ['auth']], function () {
     
     
     //News category Routes
+    Route::get('/category','Admin\CategoryController@index')->name('category');
+    Route::get('/category/create','Admin\CategoryController@create')->name('category.create');
+    Route::get('/category/getData','Admin\CategoryController@getData')->name('category.getData');
+    Route::post('/category/store','Admin\CategoryController@store')->name('category.store');
+    Route::get('/category/edit/{id}','Admin\CategoryController@edit')->name('category.edit');
+    Route::post('/category/update/{id}','Admin\CategoryController@update')->name('category.update');
+    Route::get('/delete-category/{id}','Admin\CategoryController@destroy');
     
     //News Sub category Routes
-    
+    Route::get('/sub_category','Admin\SubCategoryController@index')->name('sub_category');
+    Route::get('/sub_category/create','Admin\SubCategoryController@create')->name('sub_category.create');
+    Route::post('/sub_category/store','Admin\SubCategoryController@store')->name('sub_category.store');
+    Route::get('/sub_category/getData','Admin\SubCategoryController@getData')->name('sub_category.getData');
+    Route::get('/sub_category/edit/{id}','Admin\SubCategoryController@edit')->name('sub_category.edit');
+    Route::post('/sub_category/update/{id}','Admin\SubCategoryController@update')->name('sub_category.update');
+    Route::get('/delete-sub_category/{id}','Admin\SubCategoryController@destroy');
 });

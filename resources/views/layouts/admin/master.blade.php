@@ -108,7 +108,7 @@
 <!-- overlayScrollbars -->
 {{--<script src="{{ asset('assets/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>--}}
 <!-- FastClick -->
-{{--<script src="{{ asset('assets/admin/plugins/fastclick/fastclick.js') }}"></script>--}}
+<script src="{{ asset('assets/admin/plugins/fastclick/fastclick.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('assets/admin/dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
