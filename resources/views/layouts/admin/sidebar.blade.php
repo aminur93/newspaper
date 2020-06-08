@@ -122,6 +122,25 @@
                     </ul>
                 </li>
 
+
+                <li class="nav-item has-treeview {{ Request::routeIs('gallery','gallery.image') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('gallery','gallery.image') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-file-image"></i>
+                        <p>
+                            News Gallery Image
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('gallery') }}" class="nav-link {{ Request::routeIs('gallery','gallery.image') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Gallery Image</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

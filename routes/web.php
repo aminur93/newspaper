@@ -98,4 +98,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/tag/edit/{id}','Admin\TagController@edit')->name('tag.edit');
     Route::post('/tag/update/{id}','Admin\TagController@update')->name('tag.update');
     Route::get('/delete-tag/{id}','Admin\TagController@destroy');
+    
+    //News Gallery Routes
+    Route::get('/gallery','Admin\GalleryFolderController@index')->name('gallery');
+    Route::post('/gallery/store','Admin\GalleryFolderController@store')->name('gallery.store');
+    Route::post('/gallery/update','Admin\GalleryFolderController@update')->name('gallery.update');
+    Route::get('/gallery/image/{id}','Admin\GalleryFolderController@image')->name('gallery.image');
+    Route::post('/gallery/image_upload/{id}','Admin\GalleryFolderController@upload')->name('gallery.upload');
+    Route::post('/gallery/image_delete','Admin\GalleryFolderController@image_delete')->name('gallery.image_delete');
+    Route::get('delete-folder/{id}','Admin\GalleryFolderController@destroy');
 });
