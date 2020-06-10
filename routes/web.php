@@ -106,5 +106,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/gallery/image/{id}','Admin\GalleryFolderController@image')->name('gallery.image');
     Route::post('/gallery/image_upload/{id}','Admin\GalleryFolderController@upload')->name('gallery.upload');
     Route::post('/gallery/image_delete','Admin\GalleryFolderController@image_delete')->name('gallery.image_delete');
+    Route::get('/gallery/image-delete/{id}','Admin\GalleryFolderController@folderImageDelete');
     Route::get('delete-folder/{id}','Admin\GalleryFolderController@destroy');
 });

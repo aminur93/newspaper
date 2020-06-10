@@ -77,7 +77,8 @@ class GalleryFolderController extends Controller
     public function image($id)
     {
         $gallery = GalleryFolderName::findOrFail($id);
-        return view('admin.gallery.show',compact('gallery'));
+        $gallery_image = Gallery::where('folder_id',$id)->get();
+        return view('admin.gallery.show',compact('gallery','gallery_image'));
     }
     
     public function upload(Request $request,$id)
@@ -103,17 +104,55 @@ class GalleryFolderController extends Controller
     public function image_delete(Request $request)
     {
         $filename =  $request->get('filename');
+        $folder_id = $request->get('folder_id');
     
         Gallery::where('gallery_image',$filename)->delete();
     
-        $path = public_path().'/assets/admin/uploads/pavel/'.$filename;
+        $gallery = GalleryFolderName::where('id',$folder_id)->first();
         
-        if (file_exists($path)) {
-            unlink($path);
+        if ($gallery->folder_name){
+            
+            $path = public_path().'/assets/admin/uploads/'.$gallery->folder_name.'/'.$filename;
+    
+            if (file_exists($path)) {
+                unlink($path);
+            }
         }
+        
+        
     
         return response()->json([
-            'flash_message_success' => 'Gallery Image Deleted'
+            'flash_message_success' => 'Gallery Uploaded Image Deleted'
+        ],200);
+    }
+    
+    public function folderImageDelete($id)
+    {
+        $gallery_images = Gallery::where('id',$id)->first();
+        
+        
+        
+        if (isset($_GET['folder_id']))
+        {
+            $folder_id = $_GET['folder_id'];
+    
+            $gallery = GalleryFolderName::where('id',$folder_id)->first();
+    
+            if ($gallery->folder_name){
+        
+                $path = public_path().'/assets/admin/uploads/'.$gallery->folder_name.'/'.$gallery_images->gallery_image;
+        
+                if (file_exists($path)) {
+                    unlink($path);
+                }
+            }
+        }
+        
+        $gallery_images->delete();
+       
+    
+        return response()->json([
+            'flash_message_success' => 'Gallery Folder Uploaded Image Deleted'
         ],200);
     }
 }
