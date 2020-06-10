@@ -108,4 +108,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/gallery/image_delete','Admin\GalleryFolderController@image_delete')->name('gallery.image_delete');
     Route::get('/gallery/image-delete/{id}','Admin\GalleryFolderController@folderImageDelete');
     Route::get('delete-folder/{id}','Admin\GalleryFolderController@destroy');
+    
+    //News Post Routes
+    Route::get('/news','Admin\NewsPostController@index')->name('news');
+    Route::get('/news/create','Admin\NewsPostController@create')->name('news.create');
 });

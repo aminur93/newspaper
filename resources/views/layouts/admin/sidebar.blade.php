@@ -141,6 +141,24 @@
                     </ul>
                 </li>
 
+                <li class="nav-item has-treeview {{ Request::routeIs('news','news.create') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('news','news.create') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-book-reader"></i>
+                        <p>
+                            News Post
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('news') }}" class="nav-link {{ Request::routeIs('news','news.create') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>News</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
