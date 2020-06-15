@@ -112,4 +112,20 @@ Route::group(['middleware' => ['auth']], function () {
     //News Post Routes
     Route::get('/news','Admin\NewsPostController@index')->name('news');
     Route::get('/news/create','Admin\NewsPostController@create')->name('news.create');
+    Route::post('/news/store','Admin\NewsPostController@store')->name('news.store');
+    Route::post('/news/get_country','Admin\NewsPostController@get_country')->name('news.get_country');
+    Route::post('/news/get_division','Admin\NewsPostController@get_division')->name('news.get_division');
+    Route::post('/news/get_zilla','Admin\NewsPostController@get_zilla')->name('news.get_zilla');
+    Route::post('/news/get_upzilla','Admin\NewsPostController@get_upzilla')->name('news.get_upzilla');
+    Route::post('/news/get_subcategory','Admin\NewsPostController@get_subcategory')->name('news.get_subcategory');
+    Route::get('/news/getData','Admin\NewsPostController@getData')->name('news.getData');
+    Route::get('/news/edit/{id}','Admin\NewsPostController@edit')->name('news.edit');
+    Route::post('/news/update/{id}','Admin\NewsPostController@update')->name('news.update');
+    Route::get('/news/delete_image/{id}','Admin\NewsPostController@delete_image')->name('news.delete_image');
+    Route::get('destroy-news/{id}','Admin\NewsPostController@destroy')->name('news.destroy');
+    Route::get('approve-news/{id}','Admin\NewsPostController@approve')->name('news.approve');
+    Route::get('publish-news/{id}','Admin\NewsPostController@publish')->name('news.publish');
+    Route::get('feature-news/{id}','Admin\NewsPostController@feature')->name('news.feature');
+    Route::get('/news/view/{id}','Admin\NewsPostController@view')->name('news.view');
+   
 });

@@ -127,7 +127,7 @@
                     <a href="#" class="nav-link {{ Request::routeIs('gallery','gallery.image') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-file-image"></i>
                         <p>
-                            News Gallery Image
+                            News Gallery
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -135,14 +135,14 @@
                         <li class="nav-item">
                             <a href="{{ route('gallery') }}" class="nav-link {{ Request::routeIs('gallery','gallery.image') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Gallery Image</p>
+                                <p>Gallery</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="nav-item has-treeview {{ Request::routeIs('news','news.create') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link {{ Request::routeIs('news','news.create') ? 'active' : '' }}">
+                <li class="nav-item has-treeview {{ Request::routeIs('news','news.create','news.edit') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::routeIs('news','news.create','news.edit') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-book-reader"></i>
                         <p>
                             News Post
@@ -151,7 +151,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('news') }}" class="nav-link {{ Request::routeIs('news','news.create') ? 'active' : '' }}">
+                            <a href="{{ route('news') }}" class="nav-link {{ Request::routeIs('news','news.create','news.edit') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>News</p>
                             </a>
