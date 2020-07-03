@@ -7,18 +7,12 @@
 				</span>
 
             <span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Interest rate angst trips up US equity bull market
-					</span>
 
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Designer fashion show kicks off Variety Week
-					</span>
+				@forelse($news as $value)
+					<span class="dis-inline-block slide100-txt-item animated visible-false">{{ $value->headline }}</span>
+				@endforeach
 
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Microsoft quisque at ipsum vel orci eleifend ultrices
-					</span>
-				</span>
+			</span>
         </div>
 
         <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">

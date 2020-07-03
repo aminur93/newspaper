@@ -6,6 +6,7 @@ use App\Country;
 use App\Divison;
 use App\NewsCategory;
 use App\NewsPost;
+use App\NewsPostVideo;
 use App\NewsSubCategory;
 use App\Tag;
 use App\Types;
@@ -16,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\Input;
 
 class NewsPostController extends Controller
 {
@@ -238,9 +240,6 @@ class NewsPostController extends Controller
                         Image::make($image_tmp)->resize(1000,529)->save($medium_image_path);
                         Image::make($image_tmp)->resize(720,540)->save($submedium_image_path);
                         Image::make($image_tmp)->resize(100,75)->save($small_image_path);
-            
-                        //store product image in data table
-            
                         
                     }
                 }
@@ -388,6 +387,8 @@ class NewsPostController extends Controller
                               <a rel6=\"$news->id\" rel7=\"feature-news\" href=\"javascript:\" style='margin-right: 5px' class=\"btn btn-sm btn-secondary feature \"><i class='fa fa-star'></i></a>
                               ||
                               <a  href=\"/news/view/$news->id\" style='margin-right: 5px' class=\"btn btn-sm btn-info \"><i class='fa fa-eye'></i></a>
+                              ||
+                              <a  href=\"/news/video/$news->id\" style='margin-right: 5px' class=\"btn btn-sm btn-dark \"><i class='fa fa-video'></i></a>
                                   ";
                 }
                 $return .= "</div>";
@@ -529,8 +530,7 @@ class NewsPostController extends Controller
                     Image::make($image_tmp)->resize(100,75)->save($small_image_path);
                 
                     //store product image in data table
-                
-                
+                    
                 }
             }
         
@@ -653,6 +653,174 @@ class NewsPostController extends Controller
     
         return response()->json([
             'flash_message_success' => 'News Post Feature Successfully'
+        ],200);
+    }
+    
+    public function video($id)
+    {
+        $news = NewsPost::findOrFail($id);
+        return view('admin.news.news_video',compact('news'));
+    }
+    
+    public function video_create($id)
+    {
+        $news = NewsPost::findOrFail($id);
+        return view('admin.news.video_create',compact('news'));
+    }
+    
+    public function video_store(Request $request)
+    {
+        if ($request->isMethod('post'))
+        {
+            ini_set('max_execution_time', 3000);
+            ini_set('memory_limit','256M');
+            
+            $news_video = new NewsPostVideo();
+            
+            $news_video->news_id = $request->news_id;
+    
+            if ($request->hasFile('video'))
+            {
+                $video_temp = Input::file('video');
+        
+                $video_name = $video_temp->getClientOriginalName();
+                $video_path = public_path().'/assets/admin/uploads/news_videos/';
+                $video_temp->move($video_path,$video_name);
+                
+                $news_video->video = $video_name;
+            }
+            
+            
+            $news_video->save();
+    
+            return response()->json([
+                'flash_message_success' => 'News Videos Added Successfully'
+            ],200);
+            
+        }
+    }
+    
+    public function video_getData()
+    {
+        $news_video = DB::table('news_post_videos')
+                        ->select(
+                            'news_post_videos.id',
+                            'news_post_videos.video',
+                            'news_posts.title',
+                            'news_posts.id as pid'
+                        )
+                        ->join('news_posts','news_post_videos.news_id','=','news_posts.id')
+                        ->get();
+        //dd($news_video);
+    
+        return DataTables::of($news_video)
+            ->addIndexColumn()
+            ->addColumn('video',function ($news_video){
+                if (!empty($news_video->video))
+                {
+                    $url=asset("assets/admin/uploads/news_videos/$news_video->video");
+                    return '<video width="320" height="240" controls autoplay>
+                            <source src="'.$url.'" type="video/mp4">
+                        </video>';
+                }else{
+                    return "<p>No video in this news</p>";
+                }
+                
+            })
+            ->editColumn('action', function ($news_video) {
+                $return = "<div class=\"btn-group\">";
+                if (!empty($news_video->title))
+                {
+                    $return .= "
+                            <a href=\"/news/video/$news_video->pid/video_edit/$news_video->id\" style='margin-right: 5px' class=\"btn btn-sm btn-warning\"><i class='fa fa-edit'></i></a>
+                            ||
+                              <a rel=\"$news_video->id\" rel1=\"/news/video/delete-video\" href=\"javascript:\" style='margin-right: 5px' class=\"btn btn-sm btn-danger deleteRecord \"><i class='fa fa-trash'></i></a>
+                        
+                                  ";
+                }
+                $return .= "</div>";
+                return $return;
+            })
+            ->rawColumns([
+                'video','action'
+            ])
+            ->make(true);
+    }
+    
+    public function video_edit($id,$video_id)
+    {
+        $news = NewsPost::findOrFail($id);
+        $video = NewsPostVideo::findOrFail($video_id);
+        return view('admin.news.video_edit',compact('news','video'));
+    }
+    
+    public function video_update(Request $request,$id)
+    {
+        if ($request->isMethod('post'))
+        {
+            ini_set('max_execution_time', 3000);
+            ini_set('memory_limit','256M');
+    
+            $news_video = NewsPostVideo::findOrFail($id);
+    
+            $news_video->news_id = $request->news_id;
+    
+            if ($request->hasFile('video'))
+            {
+                $video_temp = Input::file('video');
+        
+                $video_name = $video_temp->getClientOriginalName();
+                $video_path = public_path().'/assets/admin/uploads/news_videos/';
+                $video_temp->move($video_path,$video_name);
+            }else{
+    
+                $video_name = $request->current_video;
+            }
+    
+            $news_video->video = $video_name;
+    
+    
+            $news_video->save();
+    
+            return response()->json([
+                'flash_message_success' => 'News Videos Updated Successfully'
+            ],200);
+        }
+    }
+    
+    public function video_remove($id)
+    {
+        $video = NewsPostVideo::where('id',$id)->first();
+        
+        $video_path = public_path().'/assets/admin/uploads/news_videos/'.$video->video;
+        
+        if (!empty($video->video))
+        {
+            unlink($video_path);
+        }
+    
+        $video->update(['video'=>null]);
+    
+        return response()->json([
+            'flash_message_success' => 'Video Deleted Successfully'
+        ],200);
+    }
+    
+    public function videoDelete($id)
+    {
+        $news_video = NewsPostVideo::findOrFail($id);
+        
+        $video_path = public_path().'/assets/admin/uploads/news_videos/'.$news_video->video;
+        
+        if (!empty($news_video->video))
+        {
+            unlink($video_path);
+        }
+        
+        $news_video->delete();
+    
+        return response()->json([
+            'flash_message_success' => 'News Videos Deleted Successfully'
         ],200);
     }
 }

@@ -216,6 +216,7 @@
 <script src="{{ asset('assets/frontend/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <!--===============================================================================================-->
 <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/custom.js') }}"></script>
 
 </body>
 </html>

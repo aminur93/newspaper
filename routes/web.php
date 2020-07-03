@@ -12,6 +12,7 @@
 */
 
 Route::get('/','HomeController@index');
+Route::post('/email/subscribes','HomeController@emailSubscribes')->name('email.subscribes');
 
 Auth::routes();
 
@@ -127,5 +128,21 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('publish-news/{id}','Admin\NewsPostController@publish')->name('news.publish');
     Route::get('feature-news/{id}','Admin\NewsPostController@feature')->name('news.feature');
     Route::get('/news/view/{id}','Admin\NewsPostController@view')->name('news.view');
+    
+    //News Video Routes
+    Route::get('/news/video/{id}','Admin\NewsPostController@video')->name('news.video');
+    Route::get('/news/video_create/{id}','Admin\NewsPostController@video_create')->name('news.video_create');
+    Route::get('/news/video_getData','Admin\NewsPostController@video_getData')->name('news.video_getData');
+    Route::post('/news/video_store','Admin\NewsPostController@video_store')->name('news.video_store');
+    Route::get('/news/video/{id}/video_edit/{video_id}','Admin\NewsPostController@video_edit')->name('news.video_edit');
+    Route::post('/news/video_update/{id}','Admin\NewsPostController@video_update')->name('news.video_update');
+    Route::get('/news/video/video_delete/{id}','Admin\NewsPostController@video_remove')->name('news.video_remove');
+    Route::get('/news/video/delete-video/{id}','Admin\NewsPostController@videoDelete');
+    
+    //Email Subscriber Routes
+    Route::get('/emailsubscribe','Admin\EmailSubscribeController@index')->name('emailsubscribe');
+    Route::get('/emailsubscribe/create','Admin\EmailSubscribeController@create')->name('emailsubscribe.create');
+    Route::get('/emailsubscribe/getData','Admin\EmailSubscribeController@getData')->name('emailsubscribe.getData');
+    Route::post('/emailsubscribe/send','Admin\EmailSubscribeController@send')->name('emailsubscribe.send');
    
 });

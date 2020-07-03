@@ -10,23 +10,24 @@
                 </div>
 
                 <div class="row p-t-35">
+                    @forelse($latest_news as $ln)
                     <div class="col-sm-6 p-r-25 p-r-15-sr991">
                         <!-- Item latest -->
                         <div class="m-b-45">
-                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                <img src="{{ asset('assets/frontend/images/latest-01.jpg') }}" alt="IMG">
+                            <a href="" class="wrap-pic-w hov1 trans-03">
+                                <img src="{{ asset('assets/admin/uploads/news_sub_medium/'.$ln->image) }}" alt="IMG">
                             </a>
 
                             <div class="p-t-16">
                                 <h5 class="p-b-5">
                                     <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-                                        You wish lorem ipsum dolor sit amet consectetur
+                                        {{ $ln->headline }}
                                     </a>
                                 </h5>
 
                                 <span class="cl8">
 										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by John Alvarado
+											by {{ $ln->author }}
 										</a>
 
 										<span class="f1-s-3 m-rl-3">
@@ -34,167 +35,13 @@
 										</span>
 
 										<span class="f1-s-3">
-											Feb 18
+                                            {!! \App\Helpers\Helper::date_convert($ln->date) !!}
 										</span>
 									</span>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
-                        <!-- Item latest -->
-                        <div class="m-b-45">
-                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                <img src="{{ asset('assets/frontend/images/latest-02.jpg') }}" alt="IMG">
-                            </a>
-
-                            <div class="p-t-16">
-                                <h5 class="p-b-5">
-                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-                                        You wish lorem ipsum dolor sit amet consectetur
-                                    </a>
-                                </h5>
-
-                                <span class="cl8">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by John Alvarado
-										</a>
-
-										<span class="f1-s-3 m-rl-3">
-											-
-										</span>
-
-										<span class="f1-s-3">
-											Feb 16
-										</span>
-									</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
-                        <!-- Item latest -->
-                        <div class="m-b-45">
-                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                <img src="{{ asset('assets/frontend/images/latest-03.jpg') }}" alt="IMG">
-                            </a>
-
-                            <div class="p-t-16">
-                                <h5 class="p-b-5">
-                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-                                        You wish lorem ipsum dolor sit amet consectetur
-                                    </a>
-                                </h5>
-
-                                <span class="cl8">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by John Alvarado
-										</a>
-
-										<span class="f1-s-3 m-rl-3">
-											-
-										</span>
-
-										<span class="f1-s-3">
-											Feb 15
-										</span>
-									</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
-                        <!-- Item latest -->
-                        <div class="m-b-45">
-                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                <img src="{{ asset('assets/frontend/images/latest-04.jpg') }}" alt="IMG">
-                            </a>
-
-                            <div class="p-t-16">
-                                <h5 class="p-b-5">
-                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-                                        You wish lorem ipsum dolor sit amet consectetur
-                                    </a>
-                                </h5>
-
-                                <span class="cl8">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by John Alvarado
-										</a>
-
-										<span class="f1-s-3 m-rl-3">
-											-
-										</span>
-
-										<span class="f1-s-3">
-											Feb 13
-										</span>
-									</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
-                        <!-- Item latest -->
-                        <div class="m-b-45">
-                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                <img src="{{ asset('assets/frontend/images/latest-05.jpg') }}" alt="IMG">
-                            </a>
-
-                            <div class="p-t-16">
-                                <h5 class="p-b-5">
-                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-                                        You wish lorem ipsum dolor sit amet consectetur
-                                    </a>
-                                </h5>
-
-                                <span class="cl8">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by John Alvarado
-										</a>
-
-										<span class="f1-s-3 m-rl-3">
-											-
-										</span>
-
-										<span class="f1-s-3">
-											Feb 10
-										</span>
-									</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
-                        <!-- Item latest -->
-                        <div class="m-b-45">
-                            <a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-                                <img src="{{ asset('assets/frontend/images/latest-06.jpg') }}" alt="IMG">
-                            </a>
-
-                            <div class="p-t-16">
-                                <h5 class="p-b-5">
-                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-                                        You wish lorem ipsum dolor sit amet consectetur
-                                    </a>
-                                </h5>
-
-                                <span class="cl8">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by John Alvarado
-										</a>
-
-										<span class="f1-s-3 m-rl-3">
-											-
-										</span>
-
-										<span class="f1-s-3">
-											Feb 09
-										</span>
-									</span>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
                 </div>
             </div>
 
@@ -251,10 +98,17 @@
                             Get all latest content delivered to your email a few times a month.
                         </p>
 
-                        <form class="size-a-9 pos-relative">
-                            <input class="s-full f1-m-6 cl6 plh9 p-l-20 p-r-55" type="text" name="email" placeholder="Email">
+                        <div id="success_message"></div>
 
-                            <button class="size-a-10 flex-c-c ab-t-r fs-16 cl9 hov-cl10 trans-03">
+                        <div id="error_message"></div>
+
+                        <input type="hidden" value="{{ route('email.subscribes') }}" id="action_route">
+
+                        <form class="size-a-9 pos-relative" id="email_subscribe" method="post">
+                            @csrf
+                            <input class="s-full f1-m-6 cl6 plh9 p-l-20 p-r-55" type="text" name="email" id="email" placeholder="Email">
+
+                            <button type="submit" class="size-a-10 flex-c-c ab-t-r fs-16 cl9 hov-cl10 trans-03">
                                 <i class="fa fa-arrow-right"></i>
                             </button>
                         </form>
@@ -269,37 +123,11 @@
                         </div>
 
                         <div class="flex-wr-s-s m-rl--5">
+                            @forelse($tags as $tag)
                             <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Fashion
+                                {{ $tag->tah_name }}
                             </a>
-
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Lifestyle
-                            </a>
-
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Denim
-                            </a>
-
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Streetstyle
-                            </a>
-
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Crafts
-                            </a>
-
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Magazine
-                            </a>
-
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                News
-                            </a>
-
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Blogs
-                            </a>
+                                @endforeach
                         </div>
                     </div>
                 </div>
