@@ -26,6 +26,22 @@ News Video Edit
                         <input type="hidden" name="video_id" id="video_id" value="{{ $video->id }}">
 
                         <div class="form-group row">
+                            <label for="">Thumbnail</label>
+                            <input type="file" name="thumbnail" id="thumbnail" class="form-control">
+                            <input type="hidden" class="form-control" name="current_image" value="{{$video->thumbnail}}">
+
+                            <div id="image-holder" style="margin-top: 15px;"></div>
+                        </div>
+
+                        @if (!empty($video->thumbnail))
+                            <div>
+                                <img src="{{ asset('assets/admin/uploads/video_image/'.$video->thumbnail) }}" width="320" height="240" alt="">
+
+                                <a rel2="{{ $video->id }}" rel3="/news/video/image_delete" class="text-danger" id="image_remove">Remove</a>
+                            </div>
+                        @endif
+
+                        <div class="form-group row">
                             <label for="name" class="control-label">Video</label>
                             <input type="file" name="video" id="video" class="form-control">
                             <input type="hidden" class="form-control" name="current_video" value="{{$video->video}}">
@@ -91,9 +107,69 @@ News Video Edit
             })
         });
 
+        $(document).ready(function () {
+            $("#image_remove").on("click",function (e) {
+                e.preventDefault();
+
+                var id = $(this).attr('rel2');
+                var deleteFunction = $(this).attr('rel3');
+
+                swal({
+                        title: "Are You Sure?",
+                        text: "You will not be able to recover this record again",
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonClass: "btn-danger",
+                        confirmButtonText: "Yes, Delete It"
+                    },
+                    function(){
+                        $.ajax({
+                            type: "GET",
+                            url: deleteFunction+'/'+id,
+                            data: {id:id},
+                            success: function (data) {
+
+                                if(data.flash_message_success) {
+                                    $('#success_message').html('<div class="alert alert-success">\n' +
+                                        '<button class="close" data-dismiss="alert">×</button>\n' +
+                                        '<strong>Success! '+data.flash_message_success+'</strong> ' +
+                                        '</div>');
+                                }
+
+                                editForm();
+                            }
+                        });
+                    });
+            })
+        });
+
         function editForm() {
             $('#edit_form_body').load(' #edit_form_body');
         }
+
+        $("#thumbnail").on('change', function () {
+
+            if (typeof (FileReader) != "undefined") {
+
+                var image_holder = $("#image-holder");
+                image_holder.empty();
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("<img />", {
+                        "src": e.target.result,
+                        "class": "thumb-image",
+                        "width": "100px",
+                        "height": "100px"
+                    }).appendTo(image_holder);
+
+                }
+                image_holder.show();
+                reader.readAsDataURL($(this)[0].files[0]);
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+        });
 
         $(document).ready(function () {
             $("#video_news_edit").on("submit",function (e) {

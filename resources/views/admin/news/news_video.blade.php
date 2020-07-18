@@ -25,6 +25,7 @@ News Video
                         <thead>
                         <tr>
                             <th>#Sl NO</th>
+                            <th>thumbnail</th>
                             <th>Video</th>
                             <th>News Title</th>
                             <th>Action</th>
@@ -33,6 +34,7 @@ News Video
                         <tfoot>
                         <tr>
                             <th>#Sl NO</th>
+                            <th>thumbnail</th>
                             <th>Video</th>
                             <th>News Title</th>
                             <th>Action</th>
@@ -66,6 +68,7 @@ News Video
                 },
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                    {data: 'thumbnail', name: 'thumbnail'},
                     {data: 'video', name: 'video'},
                     {data: 'title', name: 'title'},
                     {data: 'action', name: 'action', orderable: false, searchable: false}

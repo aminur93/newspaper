@@ -13,6 +13,13 @@
 
 Route::get('/','HomeController@index');
 Route::post('/email/subscribes','HomeController@emailSubscribes')->name('email.subscribes');
+Route::get('/details/{id}','HomeController@details')->name('details');
+Route::get('/category_post/{id}','HomeController@categoryPost')->name('category_post');
+Route::get('/tag_post/{id}','HomeController@tagPost')->name('tag_post');
+Route::get('/autocomplete_search','HomeController@autocomplete')->name('autocomplete');
+Route::get('/user/regsiter','HomeController@register')->name('user.register');
+Route::get('/user/register/store','HomeController@registerStore')->name('registerStore');
+
 
 Auth::routes();
 
@@ -138,6 +145,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/news/video_update/{id}','Admin\NewsPostController@video_update')->name('news.video_update');
     Route::get('/news/video/video_delete/{id}','Admin\NewsPostController@video_remove')->name('news.video_remove');
     Route::get('/news/video/delete-video/{id}','Admin\NewsPostController@videoDelete');
+    Route::get('/news/video/image_delete/{id}','Admin\NewsPostController@imageDelete');
     
     //Email Subscriber Routes
     Route::get('/emailsubscribe','Admin\EmailSubscribeController@index')->name('emailsubscribe');

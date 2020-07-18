@@ -51,55 +51,18 @@
                         </div>
 
                         <ul class="p-t-35">
+                            @php $i = 1; @endphp
+                            @foreach($popular_news as $pn)
                             <li class="flex-wr-sb-s p-b-22">
                                 <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                    1
+                                    {{ $i++ }}
                                 </div>
 
                                 <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    {{ $pn->title }}
                                 </a>
                             </li>
-
-                            <li class="flex-wr-sb-s p-b-22">
-                                <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                    2
-                                </div>
-
-                                <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                    Proin velit consectetur non neque
-                                </a>
-                            </li>
-
-                            <li class="flex-wr-sb-s p-b-22">
-                                <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                    3
-                                </div>
-
-                                <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                    Nunc vestibulum, enim vitae condimentum volutpat lobortis ante
-                                </a>
-                            </li>
-
-                            <li class="flex-wr-sb-s p-b-22">
-                                <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-                                    4
-                                </div>
-
-                                <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                    Proin velit justo consectetur non neque elementum
-                                </a>
-                            </li>
-
-                            <li class="flex-wr-sb-s p-b-22">
-                                <div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0">
-                                    5
-                                </div>
-
-                                <a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-                                    Proin velit consectetur non neque
-                                </a>
-                            </li>
+                                @endforeach
                         </ul>
                     </div>
 
@@ -195,13 +158,14 @@
 </div>
 
 <!-- Modal Video 01-->
-<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document" data-dismiss="modal">
-        <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
-
-        <div class="wrap-video-mo-01">
-            <div class="video-mo-01">
-                <iframe src="https://www.youtube.com/embed/wJnBTPUQS5A?rel=0" allowfullscreen></iframe>
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <video controls width="100%">
+                    <source src="" type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
@@ -217,6 +181,70 @@
 <!--===============================================================================================-->
 <script src="{{ asset('assets/frontend/js/main.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/custom.js') }}"></script>
+
+<script>
+    $(function() {
+        $(".video").click(function () {
+            var theModal = $(this).data("target"),
+                videoSRC = $(this).attr("data-video"),
+                videoSRCauto = videoSRC + "";
+            $(theModal + ' source').attr('src', videoSRCauto);
+            $(theModal + ' video').attr('src', videoSRCauto);
+            $(theModal + ' button.close').click(function () {
+                $(theModal + ' source').attr('src', videoSRCauto);
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#search").on('keyup blur',function () {
+
+            var search = $("#search").val();
+
+            $.ajax({
+                url: "{{ route('autocomplete') }}",
+                type: "GET",
+                data: {search:search},
+                success: function (data) {
+
+                    var he = $("#search").val();
+
+                    if (he.length === 0 )
+                    {
+                        //$('#news_list').html("");
+                        $('#news_list').fadeOut();
+                    }else {
+                        $("#news_list").html(data);
+                        $("#news_list").fadeIn();
+                    }
+
+                }
+            });
+        });
+
+
+        $(document).on('click', 'li', function(){
+            // declare the value in the input field to a variable
+            var value = $(this).text();
+            // assign the value to the search box
+            $('#search').val(value);
+            // after click is done, search results segment is made empty
+            $('#news_list').html("");
+            $('#news_list').fadeOut();
+            loadnews();
+
+        });
+
+        function loadnews() {
+            $("#news_list").load(' #news_list')
+        }
+
+    });
+
+
+</script>
 
 </body>
 </html>

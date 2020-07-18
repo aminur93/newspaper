@@ -202,10 +202,10 @@
             },300);      
         });
 
-        $('[data-dismiss="modal"]').on('click',function(){
-            $('.video-mo-01').children('iframe')[0].src = srcOld;
-            $('.video-mo-01').css('opacity','0');
-        });
+        // $('[data-dismiss="modal"]').on('click',function(){
+        //     $('.video-mo-01').children('iframe')[0].src = srcOld;
+        //     $('.video-mo-01').css('opacity','0');
+        // });
     } catch(er) {console.log(er);}
    
 

@@ -16,6 +16,7 @@ class CreateNewsPostVideosTable extends Migration
         Schema::create('news_post_videos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('news_id');
+            $table->string('thumbnail');
             $table->text('video');
             $table->timestamps();
         });

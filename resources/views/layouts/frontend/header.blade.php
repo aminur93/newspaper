@@ -7,7 +7,7 @@
                 <div class="left-topbar">
 						<span class="left-topbar-item flex-wr-s-c">
 							<span>
-								New York, NY
+								Bangladesh, Dhaka
 							</span>
 
 							<img class="m-b-1 m-rl-8" src="{{ asset('assets/frontend/images/icons/icon-night.png') }}" alt="IMG">
@@ -25,7 +25,7 @@
                         Contact
                     </a>
 
-                    <a href="#" class="left-topbar-item">
+                    <a href="{{ route('user.register') }}" class="left-topbar-item">
                         Sing up
                     </a>
 
@@ -62,7 +62,7 @@
         <div class="wrap-header-mobile">
             <!-- Logo moblie -->
             <div class="logo-mobile">
-                <a href="index.html"><img src="{{ asset('assets/frontend/images/icons/logo-01.png') }}" alt="IMG-LOGO"></a>
+                <a href=""><img src="{{ asset('assets/frontend/images/icons/logo-01.png') }}" alt="IMG-LOGO"></a>
             </div>
 
             <!-- Button show menu -->
@@ -79,7 +79,7 @@
                 <li class="left-topbar">
 						<span class="left-topbar-item flex-wr-s-c">
 							<span>
-								New York, NY
+								Bangladesh, Dhaka
 							</span>
 
 							<img class="m-b-1 m-rl-8" src="{{ asset('assets/frontend/images/icons/icon-night.png') }}" alt="IMG">
@@ -181,8 +181,8 @@
                                 <div class="nav flex-column nav-pills" role="tablist">
                                     <a class="nav-link active" data-toggle="pill" href="#news-0" role="tab">All</a>
                                     @foreach($category as $value)
-                                    <a class="nav-link" data-toggle="pill" href="#{{ $value->category_name }}" role="tab">{{ $value->category_name }}</a>
-                                        @endforeach
+                                    <a class="nav-link" data-toggle="pill" href="#{{ $value->category_name }}-{{ $value->id }}" role="tab">{{ $value->category_name }}</a>
+                                    @endforeach
                                 </div>
 
                                 <div class="tab-content">
@@ -219,13 +219,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                                @endforeach
+                                            @endforeach
                                         </div>
                                     </div>
 
                                     @foreach($category as $cat)
-
-                                    <div class="tab-pane" id="{{ $cat->category_name }}" role="tabpanel">
+                                    <div class="tab-pane" id="{{ $cat->category_name }}-{{ $cat->id }}" role="tabpanel">
                                         <div class="row">
                                             @foreach($news as $ns)
                                                 @if($cat->id == $ns->category_id)
@@ -263,7 +262,7 @@
                                             @endforeach
                                         </div>
                                     </div>
-                                        @endforeach
+                                    @endforeach
                                 </div>
                             </div>
                         </li>

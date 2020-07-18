@@ -20,7 +20,7 @@
 
                             <div class="p-t-16">
                                 <h5 class="p-b-5">
-                                    <a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                    <a href="" class="f1-m-3 cl2 hov-cl10 trans-03">
                                         {{ $ln->headline }}
                                     </a>
                                 </h5>
@@ -56,10 +56,12 @@
                         </div>
 
                         <div>
-                            <div class="wrap-pic-w pos-relative">
-                                <img src="{{ asset('assets/frontend/images/video-01.jpg') }}" alt="IMG">
+                            {{--@foreach($news_videos as $nv)--}}
 
-                                <button class="s-full ab-t-l flex-c-c fs-32 cl0 hov-cl10 trans-03" data-toggle="modal" data-target="#modal-video-01">
+                            <div class="wrap-pic-w pos-relative">
+                                <img src="{{ asset('assets/admin/uploads/video_image/'.$news_videos->thumbnail) }}" alt="IMG">
+
+                                <button class="s-full ab-t-l flex-c-c fs-32 cl0 hov-cl10 trans-03 video"  data-video="{{ asset('assets/admin/uploads/news_videos/'.$news_videos->video) }}" data-toggle="modal" data-target="#videoModal">
                                     <span class="fab fa-youtube"></span>
                                 </button>
                             </div>
@@ -67,13 +69,13 @@
                             <div class="p-tb-16 p-rl-25 bg3">
                                 <h5 class="p-b-5">
                                     <a href="#" class="f1-m-3 cl0 hov-cl10 trans-03">
-                                        Music lorem ipsum dolor sit amet consectetur
+                                        {{ $news_videos->title }}
                                     </a>
                                 </h5>
 
                                 <span class="cl15">
 										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by John Alvarado
+											by {{ $news_videos->author }}
 										</a>
 
 										<span class="f1-s-3 m-rl-3">
@@ -81,10 +83,11 @@
 										</span>
 
 										<span class="f1-s-3">
-											Feb 18
+											{!! \App\Helpers\Helper::date_convert($news_videos->date) !!}
 										</span>
 									</span>
                             </div>
+                                {{--@endforeach--}}
                         </div>
                     </div>
 
@@ -124,7 +127,7 @@
 
                         <div class="flex-wr-s-s m-rl--5">
                             @forelse($tags as $tag)
-                            <a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+                            <a href="{{ route('tag_post',$tag->id) }}" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 {{ $tag->tah_name }}
                             </a>
                                 @endforeach

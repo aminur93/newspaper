@@ -8,6 +8,6 @@ class NewsSubCategory extends Model
 {
     public function newsposts()
     {
-        return $this->hasMany('App\NewsPosts','sub_cat_id','id');
+        return $this->hasMany('App\NewsPost','sub_cat_id','id');
     }
 }

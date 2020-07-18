@@ -18,11 +18,18 @@ News Video Create
             <div class="card card-primary">
                 <div class="card-header">@yield('page')</div>
 
-                <div class="card-body">
+                <div class="card-body" id="create_form_body">
                     <form action="" method="post" id="video_news_post" enctype="multipart/form-data">
                         @csrf
 
                         <input type="hidden" name="news_id" id="news_id" value="{{ $news->id }}">
+
+                        <div class="form-group row">
+                            <label for="">Thumbnail</label>
+                            <input type="file" name="thumbnail" id="thumbnail" class="form-control">
+
+                            <div id="image-holder" style="margin-top: 15px;"></div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="name" class="control-label">Video</label>
@@ -45,6 +52,34 @@ News Video Create
 
 @push('js')
     <script>
+        $("#thumbnail").on('change', function () {
+
+            if (typeof (FileReader) != "undefined") {
+
+                var image_holder = $("#image-holder");
+                image_holder.empty();
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("<img />", {
+                        "src": e.target.result,
+                        "class": "thumb-image",
+                        "width": "100px",
+                        "height": "100px"
+                    }).appendTo(image_holder);
+
+                }
+                image_holder.show();
+                reader.readAsDataURL($(this)[0].files[0]);
+            } else {
+                alert("This browser does not support FileReader.");
+            }
+        });
+
+        function createForm() {
+            $('#create_form_body').load(' #create_form_body');
+        }
+
         $(document).ready(function () {
             $("#video_news_post").on("submit",function (e) {
                 e.preventDefault();
@@ -74,6 +109,8 @@ News Video Create
                         }
 
                         $("form").trigger("reset");
+
+                        createForm();
                     }
                 });
             })

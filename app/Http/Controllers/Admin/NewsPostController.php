@@ -679,6 +679,23 @@ class NewsPostController extends Controller
             
             $news_video->news_id = $request->news_id;
     
+            if($request->hasFile('thumbnail')){
+        
+                $image_tmp = $request->file('thumbnail');
+                if($image_tmp->isValid()){
+                    $extenson = $image_tmp->getClientOriginalExtension();
+                    $filename = rand(111,99999).'.'.$extenson;
+            
+                    $video_image_path = public_path().'/assets/admin/uploads/video_image/'.$filename;
+            
+                    //Resize Image
+                    Image::make($image_tmp)->resize(720,604)->save($video_image_path);
+                    
+                    $news_video->thumbnail = $filename;
+            
+                }
+            }
+    
             if ($request->hasFile('video'))
             {
                 $video_temp = Input::file('video');
@@ -706,6 +723,7 @@ class NewsPostController extends Controller
                         ->select(
                             'news_post_videos.id',
                             'news_post_videos.video',
+                            'news_post_videos.thumbnail',
                             'news_posts.title',
                             'news_posts.id as pid'
                         )
@@ -727,6 +745,17 @@ class NewsPostController extends Controller
                 }
                 
             })
+    
+            ->addColumn('thumbnail',function ($news_video){
+                if (!empty($news_video->thumbnail))
+                {
+                    $url=asset("assets/admin/uploads/video_image/$news_video->thumbnail");
+                    return '<img src='.$url.' border="0" width="40" class="img-rounded" align="center" />';
+                }else{
+                    return "<p>No thumbnail in this news</p>";
+                }
+        
+            })
             ->editColumn('action', function ($news_video) {
                 $return = "<div class=\"btn-group\">";
                 if (!empty($news_video->title))
@@ -742,7 +771,7 @@ class NewsPostController extends Controller
                 return $return;
             })
             ->rawColumns([
-                'video','action'
+                'video','thumbnail','action'
             ])
             ->make(true);
     }
@@ -764,6 +793,25 @@ class NewsPostController extends Controller
             $news_video = NewsPostVideo::findOrFail($id);
     
             $news_video->news_id = $request->news_id;
+    
+            if($request->hasFile('thumbnail')){
+        
+                $image_tmp = $request->file('thumbnail');
+                if($image_tmp->isValid()){
+                    $extenson = $image_tmp->getClientOriginalExtension();
+                    $filename = rand(111,99999).'.'.$extenson;
+            
+                    $video_image_path = public_path().'/assets/admin/uploads/video_image/'.$filename;
+            
+                    //Resize Image
+                    Image::make($image_tmp)->resize(720,604)->save($video_image_path);
+            
+                }
+            }else{
+                $filename = $request->current_image;
+            }
+    
+            $news_video->thumbnail = $filename;
     
             if ($request->hasFile('video'))
             {
@@ -803,6 +851,24 @@ class NewsPostController extends Controller
     
         return response()->json([
             'flash_message_success' => 'Video Deleted Successfully'
+        ],200);
+    }
+    
+    public function imageDelete($id)
+    {
+        $video = NewsPostVideo::where('id',$id)->first();
+    
+        $image_path = public_path().'/assets/admin/uploads/video_image/'.$video->thumbnail;
+    
+        if (!empty($video->thumbnail))
+        {
+            unlink($image_path);
+        }
+    
+        $video->update(['thumbnail'=>null]);
+    
+        return response()->json([
+            'flash_message_success' => 'Image Deleted Successfully'
         ],200);
     }
     

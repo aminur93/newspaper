@@ -17,4 +17,14 @@ class NewsPost extends Model
     {
         return $this->belongsTo('App\NewsSubCategory','sub_cat_id','id');
     }
+    
+    public function newsVideos()
+    {
+        return $this->hasMany('App\NewsPostVideo','news_id','id');
+    }
+    
+    public function tag()
+    {
+        return $this->belongsTo('App\Tag','tag_id','id');
+    }
 }
