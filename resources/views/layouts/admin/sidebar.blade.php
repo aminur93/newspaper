@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="" class="brand-link">
         <img src="{{ asset('assets/admin/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8">
         <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
@@ -23,6 +23,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
+                @if(Auth::check() && Auth::user()->usersRole->id == 1)
                 <li class="nav-item">
                     <a href="{{ route('admin.dashboard') }}" class="nav-link {{ Request::routeIs('admin.dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -177,6 +178,32 @@
                     </ul>
                 </li>
 
+                    @elseif(Auth::check() && Auth::user()->usersRole->id == 2)
+                    <li class="nav-item">
+                        <a href="{{ route('editor.dashboard') }}" class="nav-link {{ Request::routeIs('editor.dashboard') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item has-treeview {{ Request::routeIs('news','news.create','news.edit','news.video','news.video_create','news.video_edit') ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ Request::routeIs('news','news.create','news.edit','news.video','news.video_create','news.video_edit') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-book-reader"></i>
+                            <p>
+                                News Post
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ route('news') }}" class="nav-link {{ Request::routeIs('news','news.create','news.edit','news.video','news.video_create','news.video_edit') ? 'active' : '' }}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>News</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

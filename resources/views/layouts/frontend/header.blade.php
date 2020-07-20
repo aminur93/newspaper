@@ -10,18 +10,25 @@
 								Bangladesh, Dhaka
 							</span>
 
+                            <span>&nbsp;</span>
+
+                            @if (Auth::check() && Auth::user()->usersRole->id == 3)
+                                <span>{{ Auth::user()->name }}</span>
+                            @else
+
 							<img class="m-b-1 m-rl-8" src="{{ asset('assets/frontend/images/icons/icon-night.png') }}" alt="IMG">
 
 							<span>
 								HI 58° LO 56°
 							</span>
+                            @endif
 						</span>
 
                     <a href="#" class="left-topbar-item">
                         About
                     </a>
 
-                    <a href="#" class="left-topbar-item">
+                    <a href="{{ route('contact') }}" class="left-topbar-item">
                         Contact
                     </a>
 
@@ -32,6 +39,12 @@
                     <a href="{{ route('login') }}" class="left-topbar-item">
                         Log in
                     </a>
+
+                    @if (Auth::check())
+                        <a href="{{ route('userLogout') }}" class="left-topbar-item">
+                            Log Out
+                        </a>
+                    @endif
                 </div>
 
                 <div class="right-topbar">
@@ -182,6 +195,7 @@
                                     <a class="nav-link active" data-toggle="pill" href="#news-0" role="tab">All</a>
                                     @foreach($category as $value)
                                     <a class="nav-link" data-toggle="pill" href="#{{ $value->category_name }}-{{ $value->id }}" role="tab">{{ $value->category_name }}</a>
+                                        <input type="hidden" name="category_id" value="{{ $value->id }}">
                                     @endforeach
                                 </div>
 

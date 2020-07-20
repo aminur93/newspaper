@@ -18,14 +18,23 @@ Route::get('/category_post/{id}','HomeController@categoryPost')->name('category_
 Route::get('/tag_post/{id}','HomeController@tagPost')->name('tag_post');
 Route::get('/autocomplete_search','HomeController@autocomplete')->name('autocomplete');
 Route::get('/user/regsiter','HomeController@register')->name('user.register');
-Route::get('/user/register/store','HomeController@registerStore')->name('registerStore');
+Route::post('/user/register/store','HomeController@registerStore')->name('registerStore');
+Route::post('/user/login','HomeController@userLogin')->name('userLogin');
+Route::get('/user/logout','HomeController@userLogout')->name('userLogout');
+Route::get('/contact','HomeController@contact')->name('contact');
+Route::post('/contact/message_store','HomeController@message_store')->name('contact.message_store');
+
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/user/comment','CommentController@comment')->name('comment');
+});
 
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth','admin']], function () {
     
-    Route::get('/dashboard','DashBoardContoller@index')->name('admin.dashboard');
+    Route::get('/dashboard','Admin\DashBoardContoller@index')->name('admin.dashboard');
     
     //news types routes
     Route::get('/types','Admin\TypesController@index')->name('types');
@@ -153,4 +162,40 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/emailsubscribe/getData','Admin\EmailSubscribeController@getData')->name('emailsubscribe.getData');
     Route::post('/emailsubscribe/send','Admin\EmailSubscribeController@send')->name('emailsubscribe.send');
    
+});
+
+Route::group(['middleware' => ['auth','editor']], function () {
+    
+    Route::get('/editordashboard', 'Editor\DashboradController@index')->name('editor.dashboard');
+    
+    //News Post Routes
+    Route::get('/news','Admin\NewsPostController@index')->name('news');
+    Route::get('/news/create','Admin\NewsPostController@create')->name('news.create');
+    Route::post('/news/store','Admin\NewsPostController@store')->name('news.store');
+    Route::post('/news/get_country','Admin\NewsPostController@get_country')->name('news.get_country');
+    Route::post('/news/get_division','Admin\NewsPostController@get_division')->name('news.get_division');
+    Route::post('/news/get_zilla','Admin\NewsPostController@get_zilla')->name('news.get_zilla');
+    Route::post('/news/get_upzilla','Admin\NewsPostController@get_upzilla')->name('news.get_upzilla');
+    Route::post('/news/get_subcategory','Admin\NewsPostController@get_subcategory')->name('news.get_subcategory');
+    Route::get('/news/getData','Admin\NewsPostController@getData')->name('news.getData');
+    Route::get('/news/edit/{id}','Admin\NewsPostController@edit')->name('news.edit');
+    Route::post('/news/update/{id}','Admin\NewsPostController@update')->name('news.update');
+    Route::get('/news/delete_image/{id}','Admin\NewsPostController@delete_image')->name('news.delete_image');
+    Route::get('destroy-news/{id}','Admin\NewsPostController@destroy')->name('news.destroy');
+    Route::get('approve-news/{id}','Admin\NewsPostController@approve')->name('news.approve');
+    Route::get('publish-news/{id}','Admin\NewsPostController@publish')->name('news.publish');
+    Route::get('feature-news/{id}','Admin\NewsPostController@feature')->name('news.feature');
+    Route::get('/news/view/{id}','Admin\NewsPostController@view')->name('news.view');
+    
+    //News Video Routes
+    Route::get('/news/video/{id}','Admin\NewsPostController@video')->name('news.video');
+    Route::get('/news/video_create/{id}','Admin\NewsPostController@video_create')->name('news.video_create');
+    Route::get('/news/video_getData','Admin\NewsPostController@video_getData')->name('news.video_getData');
+    Route::post('/news/video_store','Admin\NewsPostController@video_store')->name('news.video_store');
+    Route::get('/news/video/{id}/video_edit/{video_id}','Admin\NewsPostController@video_edit')->name('news.video_edit');
+    Route::post('/news/video_update/{id}','Admin\NewsPostController@video_update')->name('news.video_update');
+    Route::get('/news/video/video_delete/{id}','Admin\NewsPostController@video_remove')->name('news.video_remove');
+    Route::get('/news/video/delete-video/{id}','Admin\NewsPostController@videoDelete');
+    Route::get('/news/video/image_delete/{id}','Admin\NewsPostController@imageDelete');
+    
 });

@@ -23,6 +23,52 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/main.css') }}">
     <!--===============================================================================================-->
+    <style>
+        @media (min-width: 0) {
+            .g-mr-15 {
+                margin-right: 1.07143rem !important;
+            }
+        }
+        @media (min-width: 0){
+            .g-mt-3 {
+                margin-top: 0.21429rem !important;
+            }
+        }
+
+        .g-height-50 {
+            height: 50px;
+        }
+
+        .g-width-50 {
+            width: 50px !important;
+        }
+
+        @media (min-width: 0){
+            .g-pa-30 {
+                padding: 2.14286rem !important;
+            }
+        }
+
+        .g-bg-secondary {
+            background-color: #fafafa !important;
+        }
+
+        .u-shadow-v18 {
+            box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.15);
+        }
+
+        .g-color-gray-dark-v4 {
+            color: #777 !important;
+        }
+
+        .g-font-size-12 {
+            font-size: 0.85714rem !important;
+        }
+
+        .media-comment {
+            margin-top:20px
+        }
+    </style>
 </head>
 <body class="animsition">
 
@@ -87,7 +133,7 @@
 					</span>
 
                 <a href="" class="f1-s-3 cl8 m-rl-7 txt-center hov-cl10 trans-03">
-                    0 Comment
+                    {{ $comment_count }} Comment
                 </a>
             </div>
         </div>
@@ -104,7 +150,6 @@
                             {!! $news_details->description !!}
 
                         </p>
-
 
                         <!-- Tag -->
                         <div class="flex-s-s p-t-12 p-b-15">
@@ -149,29 +194,67 @@
                         </div>
                     </div>
 
+                    <!--Comment show-->
+                    <div class="row">
+
+                        @foreach($comments as $com)
+                        <div class="col-md-12">
+                            <div class="media g-mb-30 media-comment">
+                                <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+                                <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                                    <div class="g-mb-15">
+                                        <h5 class="h5 g-color-gray-dark-v1 mb-0">{{ $com->name }}</h5>
+                                        <span class="g-color-gray-dark-v4 g-font-size-12">{!! \App\Helpers\Helper::date_convert($com->created_at) !!} </span>
+                                    </div>
+
+                                    <p>{{ $com->message_comment }}</p>
+
+                                    <ul class="list-inline d-sm-flex my-0">
+                                        <li class="list-inline-item ml-auto">
+                                            <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                                <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                                Reply
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <br>
                     <!-- Leave a comment -->
                     <div>
                         <h4 class="f1-l-4 cl3 p-b-12">
                             Leave a Comment
                         </h4>
 
-                        <p class="f1-s-13 cl8 p-b-40">
-                            Your email address will not be published. Required fields are marked *
-                        </p>
+                        <div id="success_message"></div>
+                        <div id="error_message"></div>
 
-                        <form>
-                            <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="msg" placeholder="Comment..."></textarea>
+                        @guest
+                            <p class="f1-s-13 cl8 p-b-40">For post a new comment. you need to login first
+                                <a data-toggle="modal" data-target="#exampleModal" style="cursor: pointer;color: red;">Login</a>
+                            </p>
 
-                            <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Name*">
+                        @else
 
-                            <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="Email*">
+                            <form method="post" id="comments">
+                                @csrf
+                                <input type="hidden" name="news_post_id" id="news_post_id" value="{{ $news_details->id }}">
 
-                            <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="website" placeholder="Website">
+                                <textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="message_comment" placeholder="Comment..."></textarea>
 
-                            <button type="submit" class="size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
-                                Post Comment
-                            </button>
-                        </form>
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Name*">
+
+                                <input class="bo-1-rad-3 bocl13 size-a-16 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="Email*">
+
+                                <button type="submit" class="size-a-17 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-10">
+                                    Post Comment
+                                </button>
+                            </form>
+
+                        @endguest
                     </div>
                 </div>
             </div>
@@ -185,6 +268,40 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">User Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ route('userLogin') }}" method="post" id="user_login">
+                    @csrf
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="text" name="email" id="email" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -223,11 +340,42 @@
             });
         });
     });
+
+    $(document).ready(function () {
+        $("#comments").on("submit",function (e) {
+            e.preventDefault();
+
+            var formData = $("#comments").serializeArray();
+
+            $.ajax({
+                url : "{{ route('comment') }}",
+                type: "post",
+                data: $.param(formData),
+                dataType: "json",
+                success: function (data) {
+                    if(data.flash_message_success) {
+                        $('#success_message').html('<div class="alert alert-success">\n' +
+                            '<button class="close" data-dismiss="alert">×</button>\n' +
+                            '<strong>Success! '+data.flash_message_success+'</strong> ' +
+                            '</div>');
+                    }else {
+
+                        $('#error_message').html('<div class="alert alert-error">\n' +
+                            '<button class="close" data-dismiss="alert">×</button>\n' +
+                            '<strong>Error! '+data.error+'</strong>' +
+                            '</div>');
+                    }
+
+                    $("form").trigger("reset");
+                }
+            });
+        })
+    })
 </script>
 
 <script>
     $(document).ready(function () {
-        $("#search").on('keyup',function () {
+        $("#search").on('keyup blur',function () {
 
             var search = $("#search").val();
 
@@ -236,10 +384,22 @@
                 type: "GET",
                 data: {search:search},
                 success: function (data) {
-                    $("#news_list").html(data);
+
+                    var he = $("#search").val();
+
+                    if (he.length === 0 )
+                    {
+                        //$('#news_list').html("");
+                        $('#news_list').fadeOut();
+                    }else {
+                        $("#news_list").html(data);
+                        $("#news_list").fadeIn();
+                    }
+
                 }
             });
         });
+
 
         $(document).on('click', 'li', function(){
             // declare the value in the input field to a variable
@@ -248,7 +408,14 @@
             $('#search').val(value);
             // after click is done, search results segment is made empty
             $('#news_list').html("");
+            $('#news_list').fadeOut();
+            loadnews();
+
         });
+
+        function loadnews() {
+            $("#news_list").load(' #news_list')
+        }
 
     });
 

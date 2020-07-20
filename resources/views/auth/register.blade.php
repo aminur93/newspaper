@@ -7,6 +7,8 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
@@ -28,7 +30,10 @@
         <div class="card-body login-card-body">
             <p class="login-box-msg">Register a new membership</p>
 
-            <form action="{{ route('registerStore') }}" method="post"> @csrf
+            <div id="success_message"></div>
+            <div id="error_message"></div>
+
+            <form action="" method="post" id="register"> @csrf
 
                 <div class="input-group mb-3">
                     <input type="name" name="name" id="name" class="form-control" placeholder="Full Name">
@@ -119,7 +124,7 @@
             <!-- /.social-auth-links -->
 
             <p class="mb-1">
-                <a href="#">I already have a membership</a>
+                <a href="{{ route('login') }}">I already have a membership</a>
             </p>
 
         </div>
@@ -132,6 +137,39 @@
 <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#register").on("submit",function (e) {
+            e.preventDefault();
+
+            var formData = $("#register").serializeArray();
+
+            $.ajax({
+                url: "{{ route('registerStore') }}",
+                type: "post",
+                data: $.param(formData),
+                dataType: "json",
+                success: function (data) {
+                    if(data.flash_message_success) {
+                        $('#success_message').html(' <div class="alert alert-success alert-block">\n' +
+                            '                <button type="button" class="close" data-dismiss="alert">x</button>\n' +
+                            '               <strong>' + data.flash_message_success + '</strong>\n' +
+                            '            </div>');
+                    }else {
+
+                        $('#error_message').html(' <div class="alert alert-danger alert-block">\n' +
+                            '                <button type="button" class="close" data-dismiss="alert">x</button>\n' +
+                            '               <strong>' + data.error + '</strong>\n' +
+                            '            </div>');
+                    }
+
+                    $("form").trigger("reset");
+                }
+            });
+        })
+    })
+</script>
 
 </body>
 </html>

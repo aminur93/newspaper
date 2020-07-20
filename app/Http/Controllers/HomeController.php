@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\EmailSubscribe;
 use App\NewsCategory;
 use App\NewsPost;
@@ -10,11 +11,13 @@ use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Auth;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $category = NewsCategory::get();
         
@@ -63,7 +66,7 @@ class HomeController extends Controller
            }
        }
     
-        Session::flush();
+        Session::forget('blogkey');
        
        //dd($total_count);
         
@@ -111,12 +114,19 @@ class HomeController extends Controller
         if (!Session::has($blogkey))
         {
             $news_details->increment('news_count');
-            Session::put($blogkey,1);
+            Session::put('blogkey',$blogkey,1);
         }
+        
+        $comment_count = NewsPost::join('comments','news_posts.id','=','comments.news_post_id')->where('comments.news_post_id',$id)->count();
+        
+        $comments = NewsPost::join('comments','news_posts.id','=','comments.news_post_id')
+                            ->join('users','comments.user_id','=','users.id')
+                            ->where('comments.news_post_id',$id)->get();
+        
     
-        //dd($total_count);
+        //dd($comment_count);
     
-        return view('frontend.details',compact('category','news_details','total_count','footer_popular','main_news','news_show','news','popular_news','news_videos','all_news','sub_category','latest_news','tags'));
+        return view('frontend.details',compact('category','comments','comment_count','news_details','total_count','footer_popular','main_news','news_show','news','popular_news','news_videos','all_news','sub_category','latest_news','tags'));
     }
     
     public function categoryPost($id)
@@ -159,8 +169,6 @@ class HomeController extends Controller
                 $total_count[$c->category_name] = count($cc);
             }
         }
-        
-        //$category_post = NewsCategory::with('newsposts')->where('id',$id)->get()->take(12);
     
         $category_post = NewsPost::join('news_categories', 'news_posts.category_id', '=', 'news_categories.id')
                         ->where('news_categories.id', $categories->id)
@@ -306,7 +314,10 @@ class HomeController extends Controller
                 
                 $new_user->name = $request->name;
                 $new_user->email = $request->email;
+                $new_user->user_role_id = 3;
                 $new_user->password = bcrypt($request->password);
+                
+                $new_user->save();
         
                 DB::commit();
         
@@ -325,4 +336,108 @@ class HomeController extends Controller
             }
         }
     }
+    
+    public function userLogin(Request $request){
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->back();
+        }
+        return Redirect::to("login")->withSuccess('Oppes! You have entered invalid credentials');
+    }
+    
+    public function userLogout(){
+        Auth::logout();
+        Session::flush();
+        return Redirect::to('/');
+    }
+    
+    public function contact()
+    {
+        $category = NewsCategory::get();
+    
+        $sub_category = NewsSubCategory::get();
+    
+        $news = NewsPost::get();
+    
+        $news_show = NewsPost::get();
+    
+        $all_news = NewsPost::with('category','subCategory')->get();
+    
+        $main_news = NewsPost::with('category','subCategory')->get();
+    
+        $latest_news = NewsPost::with('category','subCategory')->latest()->get()->take(6);
+    
+        $popular_news = NewsPost::latest()->get()->take(5);
+    
+        $footer_popular = NewsPost::with('category','subCategory')->latest()->get()->take(3);
+    
+        $tags = Tag::latest()->get();
+    
+        $news_videos = DB::table('news_posts')
+            ->select('news_posts.*','news_post_videos.thumbnail','news_post_videos.video')
+            ->join('news_post_videos','news_posts.id','=','news_post_videos.news_id')
+            ->inRandomOrder()
+            ->first();
+    
+        $post_count = DB::table('news_categories')
+            ->select('news_posts.*','news_categories.category_name')
+            ->join('news_posts','news_categories.id','=','news_posts.category_id')
+            ->get();
+        $category_count = [];
+        $total_count = [];
+        foreach ($post_count as $pc)
+        {
+            $category_count[$pc->category_name][] = $pc;
+        }
+    
+    
+        foreach ($category_count as $cc)
+        {
+            //$total_count[] = count($cc);
+            foreach ($cc as $c)
+            {
+                $total_count[$c->category_name] = count($cc);
+            }
+        }
+        
+    
+        return view('frontend.contact',compact('category','total_count','footer_popular','main_news','news_show','news','popular_news','news_videos','all_news','sub_category','latest_news','tags'));
+    }
+    
+    public function message_store(Request $request)
+    {
+        if ($request->isMethod('post'))
+        {
+            DB::beginTransaction();
+        
+            try{
+                // Step 1 : Create Email Subscribe
+                $contacts = new Contact();
+    
+                $contacts->name = $request->name;
+                $contacts->email = $request->email;
+                $contacts->website = $request->website;
+                $contacts->message = $request->message;
+    
+                $contacts->save();
+            
+                DB::commit();
+            
+                return response()->json([
+                    'flash_message_success' => 'Message Send Successfully'
+                ],200);
+            
+            }catch(\Illuminate\Database\QueryException $e){
+                DB::rollback();
+            
+                $error = $e->getMessage();
+            
+                return response()->json([
+                    'error' => $error
+                ],200);
+            }
+        }
+    }
+    
 }

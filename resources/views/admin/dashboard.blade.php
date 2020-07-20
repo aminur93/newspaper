@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 @section('page')
-DashBoard
+Admin DashBoard
 @endsection
 
 @push('css')

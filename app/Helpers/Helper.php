@@ -16,4 +16,11 @@
         
             return $convert;
         }
+        
+        public static function days_ago_format($date)
+        {
+            $convert_date = $date('Y-m-d', strtotime('-5 days', strtotime($date)));
+            
+            return $convert_date;
+        }
     }
