@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Types;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
@@ -12,7 +13,22 @@ class TypesController extends Controller
 {
     public function index()
     {
-        return view('admin.types.index');
+        $total = DB::table('news_notification')->whereDate('created_at', Carbon::today())->get()->count();
+
+        $post_notification = DB::table('news_posts')
+            ->select(
+                'news_posts.id as id',
+                'news_posts.title as title',
+                'news_posts.created_at as created_at',
+                'news_notification.status as status',
+                'news_notification.seen as seen'
+            )
+            ->join('news_notification','news_posts.id','=','news_notification.news_post_id')
+            ->whereDate('news_posts.created_at', Carbon::today())
+            ->latest()
+            ->get();
+
+        return view('admin.types.index', compact('post_notification','total'));
     }
     
     public function create()

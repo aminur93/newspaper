@@ -148,6 +148,62 @@
     })
 </script>
 
+<script>
+
+    $(document).ready(function () {
+        notify();
+    });
+
+    function notify()
+    {
+        $.ajax({
+            type: "GET",
+            url: "{{ route('getNotify')}}",
+            dataType: 'JSON',
+            success: function (response) {
+
+                $(".notifications").append('<span class="badge badge-warning navbar-badge">'+JSON.stringify(response.total)+'</span>');
+                $(".noti").append(JSON.stringify(response.total)+ ' Notifications');
+
+                $.each(response.post_notification, function(i, pn){
+
+                    if (pn.status == 1 && pn.seen == 0)
+                    {
+                        $("#notie").append(
+                            '<a href="" rel="'+pn.notify_id+'" class="dropdown-item notify">'+
+                            '<i class="fas fa-envelope mr-2"></i> '+(i+1)+' News Post'+
+                            '<span class="float-right text-muted text-sm">'+pn.title+'</span>'+
+                            '</a>'+
+                            '<div class="dropdown-divider"></div>'
+                        )
+                    }
+                });
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $(document).on("click",".notify", function (e) {
+            e.preventDefault();
+
+            var id = $(this).attr('rel');
+            var _token = $('input[name="_token"]').val();
+
+            $.ajax({
+                type: "POST",
+                url: 'notification' + '/' + id,
+                data: {id:id, _token:_token},
+                success: function (data) {
+                    window.location = '{{ route('news') }}'
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+        })
+    })
+</script>
+
 @stack('js')
 </body>
 </html>

@@ -16,7 +16,7 @@ class EditorMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->usersRole->id == 2)
+        if (Auth::check() && Auth::user()->user_role_id == 2)
         {
             return $next($request);
         }else{

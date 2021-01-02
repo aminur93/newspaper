@@ -128,7 +128,7 @@ News Create
                                     <br>
                                     <div id="image-holder" class="text-center"></div>
                                 </div>
-
+                            @if(auth()->user()->user_role_id == 1)
                             <div class="form-group col-md-4">
                                 <label for="status">Status</label>
                                 <input type="checkbox" name="status" id="status">
@@ -143,6 +143,7 @@ News Create
                                 <label for="feature">News Feature</label>
                                 <input type="checkbox" name="feature" id="feature">
                             </div>
+                                @endif
 
                         </div>
 

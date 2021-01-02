@@ -12,6 +12,7 @@ use App\Tag;
 use App\Types;
 use App\UpZilla;
 use App\Zilla;
+use Carbon\Carbon;
 use Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -23,7 +24,22 @@ class NewsPostController extends Controller
 {
     public function index()
     {
-        return view('admin.news.index');
+        $total = DB::table('news_notification')->whereDate('created_at', Carbon::today())->get()->count();
+
+        $post_notification = DB::table('news_posts')
+            ->select(
+                'news_posts.id as id',
+                'news_posts.title as title',
+                'news_posts.created_at as created_at',
+                'news_notification.status as status',
+                'news_notification.seen as seen'
+            )
+            ->join('news_notification','news_posts.id','=','news_notification.news_post_id')
+            ->whereDate('news_posts.created_at', Carbon::today())
+            ->latest()
+            ->get();
+
+        return view('admin.news.index', compact('post_notification','total'));
     }
     
     public function create()
@@ -292,6 +308,14 @@ class NewsPostController extends Controller
                     'zilla_id' => $request->zilla_id,
                     'upzilla_id' => $request->upzilla_id
                 ]);
+
+                DB::table('news_notification')->insert([
+                    'news_post_id' => $news_id,
+                    'status' => 1,
+                    'seen' => 0,
+                    'created_at' => Carbon::today(),
+                    'updated_at' => Carbon::today()
+                ]);
         
                 //DB::commit();
         
@@ -344,8 +368,12 @@ class NewsPostController extends Controller
         return DataTables::of($news)
             ->addIndexColumn()
             ->addColumn('image',function ($news){
-                $url=asset("assets/admin/uploads/news_small/$news->image");
-                return '<img src='.$url.' border="0" width="40" class="img-rounded" align="center" />';
+                if ($news->image)
+                {
+                    $url=asset("assets/admin/uploads/News_small/$news->image");
+                    return '<img src='.$url.' border="0" width="40" class="img-rounded" align="center" />';
+                }
+
             })
             ->addColumn('status',function ($news){
                 if($news->status == 0)

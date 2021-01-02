@@ -34,8 +34,10 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth','admin']], function () {
     
-    Route::get('/dashboard','Admin\DashBoardContoller@index')->name('admin.dashboard');
-    
+    Route::get('dashboard','Admin\DashBoardContoller@index')->name('admin.dashboard');
+    Route::get('getNotify','Admin\DashBoardContoller@getNotifyData')->name('getNotify');
+    Route::post('notification/{id}','Admin\DashBoardContoller@notify')->name('notify');
+
     //news types routes
     Route::get('/types','Admin\TypesController@index')->name('types');
     Route::get('/create','Admin\TypesController@create')->name('create');
@@ -165,9 +167,9 @@ Route::group(['middleware' => ['auth','admin']], function () {
 });
 
 Route::group(['middleware' => ['auth','editor']], function () {
-    
+
     Route::get('/editordashboard', 'Editor\DashboradController@index')->name('editor.dashboard');
-    
+
     //News Post Routes
     Route::get('/news','Admin\NewsPostController@index')->name('news');
     Route::get('/news/create','Admin\NewsPostController@create')->name('news.create');
@@ -186,7 +188,7 @@ Route::group(['middleware' => ['auth','editor']], function () {
     Route::get('publish-news/{id}','Admin\NewsPostController@publish')->name('news.publish');
     Route::get('feature-news/{id}','Admin\NewsPostController@feature')->name('news.feature');
     Route::get('/news/view/{id}','Admin\NewsPostController@view')->name('news.view');
-    
+
     //News Video Routes
     Route::get('/news/video/{id}','Admin\NewsPostController@video')->name('news.video');
     Route::get('/news/video_create/{id}','Admin\NewsPostController@video_create')->name('news.video_create');
@@ -197,5 +199,5 @@ Route::group(['middleware' => ['auth','editor']], function () {
     Route::get('/news/video/video_delete/{id}','Admin\NewsPostController@video_remove')->name('news.video_remove');
     Route::get('/news/video/delete-video/{id}','Admin\NewsPostController@videoDelete');
     Route::get('/news/video/image_delete/{id}','Admin\NewsPostController@imageDelete');
-    
+
 });
