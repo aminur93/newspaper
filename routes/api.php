@@ -1,18 +1,22 @@
 <?php
 
-use Illuminate\Http\Request;
+//Auth for Admin DashBoard
+Route::group(['prefix' => 'auth', 'namespace' => 'Api\Auth'], function (){
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+    Route::post('login', 'LoginController@login');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    Route::post('register', 'RegisterController@register');
+
+    Route::group(['middleware' => 'auth:api'], function (){
+
+        Route::post('logout', 'LogOutController');
+
+        Route::get('me', 'MeController');
+
+    });
+
+    //Route::post('forgetPassword', 'ForgetPasswordController@forgetPassword');
+
+    //Route::post('changePassword', 'ChangePasswordController@saveResetPassword');
+
 });

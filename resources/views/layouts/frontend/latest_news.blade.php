@@ -59,9 +59,9 @@
                             {{--@foreach($news_videos as $nv)--}}
 
                             <div class="wrap-pic-w pos-relative">
-                                <img src="{{ asset('assets/admin/uploads/video_image/'.$news_videos->thumbnail) }}" alt="IMG">
+                                <img src="" alt="IMG">
 
-                                <button class="s-full ab-t-l flex-c-c fs-32 cl0 hov-cl10 trans-03 video"  data-video="{{ asset('assets/admin/uploads/news_videos/'.$news_videos->video) }}" data-toggle="modal" data-target="#videoModal">
+                                <button class="s-full ab-t-l flex-c-c fs-32 cl0 hov-cl10 trans-03 video"  data-video="" data-toggle="modal" data-target="#videoModal">
                                     <span class="fab fa-youtube"></span>
                                 </button>
                             </div>
@@ -69,13 +69,13 @@
                             <div class="p-tb-16 p-rl-25 bg3">
                                 <h5 class="p-b-5">
                                     <a href="#" class="f1-m-3 cl0 hov-cl10 trans-03">
-                                        {{ $news_videos->title }}
+                                        
                                     </a>
                                 </h5>
 
                                 <span class="cl15">
 										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by {{ $news_videos->author }}
+											by 
 										</a>
 
 										<span class="f1-s-3 m-rl-3">
@@ -83,7 +83,7 @@
 										</span>
 
 										<span class="f1-s-3">
-											{!! \App\Helpers\Helper::date_convert($news_videos->date) !!}
+											
 										</span>
 									</span>
                             </div>
