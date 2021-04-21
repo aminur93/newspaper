@@ -178,7 +178,25 @@
                     </ul>
                 </li>
 
-                    @elseif(Auth::check() && Auth::user()->usersRole->id == 2)
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users-cog"></i>
+                        <p>
+                            User Management
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>User</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                @elseif(Auth::check() && Auth::user()->usersRole->id == 2)
                     <li class="nav-item">
                         <a href="{{ route('editor.dashboard') }}" class="nav-link {{ Request::routeIs('editor.dashboard') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>

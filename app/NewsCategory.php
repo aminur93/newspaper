@@ -10,4 +10,9 @@ class NewsCategory extends Model
     {
         return $this->hasMany('App\NewsPost','category_id','id');
     }
+
+    public function subcategory()
+    {
+        return $this->hasMany('App\NewsSubCategory','category_id','id');
+    }
 }

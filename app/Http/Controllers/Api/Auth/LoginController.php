@@ -23,7 +23,7 @@ class LoginController extends Controller
 
             $user = User::where('email', $loginField)->orwhere('phone', $loginField)->first();
 
-            if ($user->user_role_id == 2 || $user->user_role_id == 3){
+            if ($user->user_role_id == 1 || $user->user_role_id == 2 || $user->user_role_id == 3){
 
                 $credentials = request([$loginType, 'password']);
 
